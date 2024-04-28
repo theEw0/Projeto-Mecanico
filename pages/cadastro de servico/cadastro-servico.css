@@ -1,0 +1,106 @@
+body{
+  
+    font-style: normal;
+    text-decoration: none;
+    
+}
+/* ------------------------------------------- */
+/*                    header                   */
+header{
+    margin: 2rem;
+
+}
+.marca{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.marca a{
+    text-decoration: none;
+   
+    margin-top: 1rem;
+}
+.placeholderHeader{
+    height: 2.1rem;
+    border-radius: 5px;
+}
+.marca button{
+    margin-top: 1.5rem;
+    margin-bottom: 0.9rem;
+    border-radius: 5px;
+}
+
+
+/*  */
+main{
+    margin-top: 10rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.FlexCadastroServicos{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    margin-right: 30rem;
+}
+.FlexCadastroServicos input{
+    border-radius: 5px;
+    width: 10rem;
+    height: 1.6rem;
+}
+.InserirSubservicos{
+    margin-top: 6rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.InserirSubservicos input{
+    width: 10rem;
+    height: 1.6rem;
+    border-radius: 5px;
+}
+.SectionInserirSubservicos{
+    display: flex;
+    flex-direction: row;
+}
+.organizadoraInserirSubservicos{
+    display: flex;
+    flex-direction: row;
+
+}
+.CustoAdicional{
+    margin-left: 5rem;
+} 
+.BtFinalizarCadastroServico{
+    display: flex;
+    justify-content: center;
+    margin-top: 6rem;
+}
+.BtFinalizarCadastroServico button{
+    background-color: rgb(42, 98, 158);
+    border-radius: 5px;
+    border-style: none;
+    color: beige;
+}
+.ServiçosCadastrados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.MarcaçoesTiposDeServiço{
+    display: flex;
+    flex-direction: column;
+}
+.TiposDeServiço{
+    display: flex;
+    flex-direction: column;
+}
+.ServiçoFeito{
+    display: flex;
+    flex-direction: column;
+}
+.CustoHomemHora{
+    display: flex;
+    flex-direction: column;
+}
