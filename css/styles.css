@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
 
 body {
@@ -13,3 +14,20 @@ body {
   max-width: 300px;
   padding: 1rem;
 }
+=======
+@import url("https://fonts.googleapis.com/css2?family=Abel&display=swap");
+
+body {
+  font-family: abel;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.form-container {
+  max-width: 300px;
+  padding: 1rem;
+}
+>>>>>>> bde768c (página de login)
