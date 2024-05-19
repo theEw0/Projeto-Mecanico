@@ -1,50 +1,53 @@
-function cadastrarProduto() {
-    // Obter dados do produto (você pode usar um formulário HTML para isso)
-    let nomeProduto = document.getElementById("nomeProduto").value;
-    let precoProduto = parseFloat(document.getElementById("precoProduto").value);
+// cadastroproduto.js
+let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
 
-    // Criar objeto do produto
-    let produto = {
-        nome: nomeProduto,
-        preco: precoProduto
+function cadastrarProduto() {
+    const produto = {
+        id: document.getElementById("idProduto").value,
+        tipo: document.getElementById("tipoProduto").value,
+        nome: document.getElementById("nomeProduto").value,
+        custo: document.getElementById("custoProduto").value,
+        preco: document.getElementById("precoProduto").value,
     };
 
-    // Obter produtos existentes do LocalStorage (ou criar um array vazio se não houver)
-    let produtos = JSON.parse(localStorage.getItem("produtos")) || [];
-
-    // Adicionar novo produto ao array
     produtos.push(produto);
-
-    // Salvar array atualizado no LocalStorage
     localStorage.setItem("produtos", JSON.stringify(produtos));
 
+    document.getElementById("idProduto").value = "";
+    document.getElementById("tipoProduto").value = "";
+    document.getElementById("nomeProduto").value = "";
+    document.getElementById("custoProduto").value = "";
+    document.getElementById("precoProduto").value = "";
+
+    atualizarTabelaProdutos();
     alert("Produto cadastrado com sucesso!");
 }
 
-function atualizarTabelaRelatorio() {
-    const tabelaBody = document.getElementById("tabelaClientes").getElementsByTagName("tbody")[0];
-    tabelaBody.innerHTML = ""; // Limpa o corpo da tabela
-  
-    clientes.forEach(cliente => {
-      const row = document.createElement("tr"); // Cria a linha
-  
-      // Cria as células e adiciona os dados
-      const nomeCell = document.createElement("td");
-      nomeCell.textContent = cliente.nome;
-      row.appendChild(nomeCell);
-  
-      const sobrenomeCell = document.createElement("td");
-      sobrenomeCell.textContent = cliente.sobrenome;
-      row.appendChild(sobrenomeCell);
-  
-      const cpfCell = document.createElement("td");
-      cpfCell.textContent = cliente.cpf;
-      row.appendChild(cpfCell);
-  
-      // Adiciona a linha à tabela
-      tabelaBody.appendChild(row);
+function atualizarTabelaProdutos() {
+    const tabelaBody = document.getElementById("tabelaProdutos").getElementsByTagName("tbody")[0];
+    tabelaBody.innerHTML = "";
+
+    produtos.forEach(produto => {
+        const row = tabelaBody.insertRow();
+
+        const idCell = row.insertCell();
+        idCell.textContent = produto.id;
+
+        const tipoCell = row.insertCell();
+        tipoCell.textContent = produto.tipo;
+
+        const nomeCell = row.insertCell();
+        nomeCell.textContent = produto.nome;
+
+        const custoCell = row.insertCell();
+        custoCell.textContent = produto.custo;
+
+        const precoCell = row.insertCell();
+        precoCell.textContent = produto.preco;
     });
-  }
-  
-  // Carregar os clientes na tabela ao iniciar a página
-  window.addEventListener('load', atualizarTabelaRelatorio); 
+}
+
+window.addEventListener("load", () => {
+    atualizarTabelaProdutos();
+    document.getElementById("btnFinalizarCadastroProduto").addEventListener("click", cadastrarProduto);
+});
