@@ -44,7 +44,6 @@
     </div>
   </nav>
 
-
   <div class="container mt-4">
     <h6>Cadastro Cliente</h6>
     <div class="d-flex flex-row justify-content-around align-items-center">
@@ -85,7 +84,6 @@
       </div>
     </div>
 
-  
     <div class="mt-4">
       <h6>Incluir Veículo</h6>
       <div class="d-flex flex-row justify-content-around align-items-center">
@@ -112,43 +110,66 @@
       </div>
     
       <div class="d-flex mt-4 flex-row justify-content-around">
-        <button class="btn btn-primary">Finalizar Cadastro</button>
+        <button id="botaoCadastrarCliente" class="btn btn-primary">Finalizar Cadastro</button>
       </div>
     </div>
 
-   
     <div class="mt-4">
       <h6>Últimos Cadastros</h6>
       <div class="d-flex">
-        <table class="table">
+        <table id="tabelaClientes" class="table">
           <thead>
             <tr>
               <th scope="col">Nome</th>
               <th scope="col">Sobrenome</th>
               <th scope="col">CPF</th>
+              <th scope="col">Ações</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Thomas</td>
-              <td>William</td>
-              <td>134.456.789.00</td>
-            </tr>
-            <tr>
-              <td>Eduardo</td>
-              <td>Pias</td>
-              <td>134.567.453.90</td>
-            </tr>
-            <tr>
-              <td>Ahmed</td>
-              <td>Neto</td>
-              <td>134.567.890.90</td>
-            </tr>
-          </tbody>
+          </tbody> 
         </table>
       </div>
     </div>
+
+    <div class="d-flex mt-4 flex-row justify-content-around">
+      <button id="botaoLimparLocalStorage" class="btn btn-danger">Limpar Cadastros</button>
+    </div>
   </div>
-<script src="js/cadastrocliente.js"></script>
+
+
+  <div class="modal fade" id="clienteModal" tabindex="-1" aria-labelledby="clienteModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="clienteModalLabel">Detalhes do Cliente</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+      
+          <p><strong>Nome:</strong> <span id="modalNome"></span></p>
+          <p><strong>Sobrenome:</strong> <span id="modalSobrenome"></span></p>
+          <p><strong>CPF:</strong> <span id="modalCPF"></span></p>
+          <p><strong>Telefone:</strong> <span id="modalTelefone"></span></p>
+          <p><strong>Número:</strong> <span id="modalNumero"></span></p>
+          <p><strong>Bairro:</strong> <span id="modalBairro"></span></p>
+          <p><strong>Endereço:</strong> <span id="modalEndereco"></span></p>
+          <p><strong>CEP:</strong> <span id="modalCEP"></span></p>
+          <hr>
+          <h6>Veículo</h6>
+          <p><strong>Marca:</strong> <span id="modalMarca"></span></p>
+          <p><strong>Modelo:</strong> <span id="modalModelo"></span></p>
+          <p><strong>Cor:</strong> <span id="modalCor"></span></p>
+          <p><strong>Ano:</strong> <span id="modalAno"></span></p>
+          <p><strong>Placa:</strong> <span id="modalPlaca"></span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cadastrocliente.js"></script>
 </body>
 </html>
