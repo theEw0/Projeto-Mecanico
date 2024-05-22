@@ -1,25 +1,18 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const formLogin = document.querySelector('form');
-    const inputUsuario = document.getElementById('username-login');
-    const inputSenha = document.querySelector('input[type="password"]');
-  
-    const usuarios = {
-      'adm@email.com': 'senha123',
-      'admin@mecasystem.com': 'admin123'
-    };
-  
-    formLogin.addEventListener('submit', (event) => {
-      event.preventDefault();
-  
-      const usuario = inputUsuario.value;
-      const senha = inputSenha.value;
-  
-      if (usuarios[usuario] === senha) {
-        alert('Login realizado com sucesso!');
-        window.location.href = 'cadastrocliente.html';
-      } else {
-        alert('Usuário ou senha incorretos!');
-      }
-    });
-  });
+function fazerLogin() {
+  const usuario = document.getElementById('txtUsuario').value;
+  const senha = document.getElementById('txtSenha').value;
+  console.log("Usuario", usuario);
+  console.log("Senha", senha);
+  // Validação simples (para fins de exemplo)
+  if (usuario === 'admin' && senha === 'senha123') {
+
+      console.log("Login Bem Sucedido")
+      window.location.href = "Home.html"
+      alert('Login bem-sucedido! Redirecionando...');
+
+  } else {
+
+      alert('Usuário ou senha incorretos. Tente novamente.');
+  }
+}
   

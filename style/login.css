@@ -1,0 +1,31 @@
+body {
+    margin-top: 15%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.BTNLOGIN {
+    background-color: #87CEEB;
+    /* Azul céu */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.BTNLOGIN:hover {
+    background-color: #5f9ea0;
+    /* Azul mais escuro ao passar o mouse */
+}
