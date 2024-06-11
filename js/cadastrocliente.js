@@ -18,30 +18,45 @@ function cadastrarCliente() {
       cor: document.getElementById("cor").value,
       ano: document.getElementById("ano").value,
       placa: document.getElementById("placa").value,
+      
     },
+
+    
   };
+  //verificacao data
+  let DataTual
+     DataTual = new Date().getFullYear()
+  
+    if(parseInt(ano.value) > DataTual || ano.value <= DataTual - 20  )
+      {
+        alert("ERRO")
+      }
+      else{clientes.push(cliente);
+        localStorage.setItem("clientes", JSON.stringify(clientes));
+      
+      
+        document.getElementById("nome").value = "";
+        document.getElementById("sobrenome").value = "";
+        document.getElementById("cpf").value = "";
+        document.getElementById("telefone").value = "";
+        document.getElementById("numero").value = "";
+        document.getElementById("bairro").value = "";
+        document.getElementById("endereco").value = "";
+        document.getElementById("cep").value = "";
+        document.getElementById("marca").value = "";
+        document.getElementById("modelo").value = "";
+        document.getElementById("cor").value = "";
+        document.getElementById("ano").value = "";
+        document.getElementById("placa").value = "";
+      
+        
+        
+        atualizarTabelaRelatorio();
+        alert("Cliente cadastrado com sucesso!");}
+  
 
-  clientes.push(cliente);
-  localStorage.setItem("clientes", JSON.stringify(clientes));
-
-
-  document.getElementById("nome").value = "";
-  document.getElementById("sobrenome").value = "";
-  document.getElementById("cpf").value = "";
-  document.getElementById("telefone").value = "";
-  document.getElementById("numero").value = "";
-  document.getElementById("bairro").value = "";
-  document.getElementById("endereco").value = "";
-  document.getElementById("cep").value = "";
-  document.getElementById("marca").value = "";
-  document.getElementById("modelo").value = "";
-  document.getElementById("cor").value = "";
-  document.getElementById("ano").value = "";
-  document.getElementById("placa").value = "";
-
-  atualizarTabelaRelatorio();
-  alert("Cliente cadastrado com sucesso!");
 }
+
 
 function atualizarTabelaRelatorio() {
   const tabelaBody = document.getElementById("tabelaClientes").getElementsByTagName("tbody")[0];
@@ -84,6 +99,8 @@ function mostrarDetalhesCliente(index) {
   document.getElementById("modalCor").textContent = cliente.veiculo.cor;
   document.getElementById("modalAno").textContent = cliente.veiculo.ano;
   document.getElementById("modalPlaca").textContent = cliente.veiculo.placa;
+
+
 
   const clienteModal = new bootstrap.Modal(document.getElementById('clienteModal'), {});
   clienteModal.show();
